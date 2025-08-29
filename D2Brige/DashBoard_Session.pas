@@ -4,12 +4,13 @@ interface
 
 uses
   SysUtils, Classes,
-  Prism.SessionBase;
+  Prism.SessionBase, uSession;
 
 type
   TDashBoardSession = class(TPrismSessionBase)
   private
-
+    FPrisSession : TPrismSession;
+    function SubDominio(URL:String):String;
   public
    constructor Create(APrismSession: TPrismSession); override;  //OnNewSession
    destructor Destroy; override; //OnCloseSession
@@ -30,10 +31,9 @@ Uses
 
 constructor TDashBoardSession.Create(APrismSession: TPrismSession); //OnNewSession
 begin
- inherited;
-
- //Your code
-
+  inherited;
+  FPrisSession := APrismSession;
+  TSession.new.ValidaEmpresa(SubDominio(APrismSession.URI.Host));
 end;
 
 destructor TDashBoardSession.Destroy; //OnCloseSession
@@ -42,6 +42,11 @@ begin
  //Ex: Dm.DBConnection.Close;
 
  inherited;
+end;
+
+function TDashBoardSession.SubDominio(URL: String): String;
+begin
+  Result := Copy(URL, 1, Pos('.', URL) - 1);
 end;
 
 end.

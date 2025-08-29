@@ -9,22 +9,6 @@ uses
 
 type
   TFrmPrincipal = class(TD2BridgeForm)
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    MainMenu1: TMainMenu;
-    Module11: TMenuItem;
-    AppModule21: TMenuItem;
-    Modules1: TMenuItem;
-    Module12: TMenuItem;
-    Module21: TMenuItem;
-    SubModules1: TMenuItem;
-    SubModule11: TMenuItem;
-    SubModule21: TMenuItem;
-    SubModule31: TMenuItem;
-    CoreModules1: TMenuItem;
-    CoreModule11: TMenuItem;
-    CoreModule21: TMenuItem;
     procedure Module11Click(Sender: TObject);
   private
 
@@ -64,13 +48,9 @@ begin
  D2Bridge.FrameworkExportType.TemplatePageHTMLFile := '';
 
  //Export yours Controls
- with D2Bridge.Items.add do
- begin
-  VCLObj(MainMenu1);
-  VCLObj(Label1);
-  VCLObj(Label2);
-  VCLObj(Label3);
- end;
+// with D2Bridge.Items.add do
+// begin
+// end;
 end;
 
 procedure TFrmPrincipal.InitControlsD2Bridge(const PrismControl: TPrismControl);

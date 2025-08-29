@@ -127,6 +127,13 @@
         <DCCReference Include="uFrmPrincipal.pas">
             <Form>FrmPrincipal</Form>
         </DCCReference>
+        <DCCReference Include="Src\Session\uSession.pas"/>
+        <DCCReference Include="Src\Config\uConfig.pas"/>
+        <DCCReference Include="Src\Dao\uDaoConexao.pas"/>
+        <DCCReference Include="Src\Dao\uDaoUtils.pas"/>
+        <DCCReference Include="Src\Utils\uUtils.pas"/>
+        <DCCReference Include="Src\Dao\ORM.Mapper.pas"/>
+        <DCCReference Include="Src\Dao\ORM.Attributes.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -159,6 +166,12 @@
             <Deployment Version="5">
                 <DeployFile LocalName="D2BridgeNewApp.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="DashBoard.exe" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="Web\DashBoard.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>DashBoard.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="iOSSimulator">
                         <Operation>1</Operation>

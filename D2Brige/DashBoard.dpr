@@ -14,7 +14,14 @@ uses
   DashBoard_Session in 'DashBoard_Session.pas' {DashBoardSession},
   D2BridgeFormTemplate in 'D2BridgeFormTemplate.pas',
   Unit_D2Bridge_Server_Console in 'Unit_D2Bridge_Server_Console.pas',
-  uFrmPrincipal in 'uFrmPrincipal.pas' {FrmPrincipal};
+  uFrmPrincipal in 'uFrmPrincipal.pas' {FrmPrincipal},
+  uSession in 'Src\Session\uSession.pas',
+  uConfig in 'Src\Config\uConfig.pas',
+  uDaoConexao in 'Src\Dao\uDaoConexao.pas',
+  uDaoUtils in 'Src\Dao\uDaoUtils.pas',
+  uUtils in 'Src\Utils\uUtils.pas',
+  ORM.Mapper in 'Src\Dao\ORM.Mapper.pas',
+  ORM.Attributes in 'Src\Dao\ORM.Attributes.pas';
 
 {$R *.res}
 
